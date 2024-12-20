@@ -1,6 +1,6 @@
-import Back from "./components/Back";
-import Header from "./components/Header";
-import Catalog from "./components/Catalog";
+import Back from "../components/Back";
+import Header from "../components/Header";
+import Catalog from "../components/Catalog";
 
 export default function Home() {
   return (
