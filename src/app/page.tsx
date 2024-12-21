@@ -4,7 +4,7 @@ import Catalog from "../components/Catalog";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[1fr] font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[1fr] ">
       <Header title={"GamerShop"} url={"/"} />
       <Back />
       <Catalog title={"TOP SELLERS"} />
