@@ -6,6 +6,7 @@ type CartContextProps = {
   addToCart: (game: Game) => void;
   removeFromCart: (id: string) => void;
   isGameInCart: (id: string) => boolean;
+  getCartCount: () => number | null;
 };
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
@@ -25,6 +26,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  const getCartCount = () => {
+    return cart.length;
+  };
 
   const isGameInCart = (id: string) => {
     return cart.some((game) => game.id === id);
@@ -47,7 +52,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, isGameInCart }}
+      value={{
+        cart,
+        addToCart,
+        getCartCount,
+        isGameInCart,
+        removeFromCart,
+      }}
     >
       {children}
     </CartContext.Provider>
