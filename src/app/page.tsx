@@ -1,6 +1,7 @@
-import Back from "../components/Back";
+"use client";
 import Header from "../components/Header";
 import Catalog from "../components/Catalog";
+import Back from "../components/Back";
 
 export default function Home() {
   return (
