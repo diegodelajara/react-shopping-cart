@@ -1,39 +1,17 @@
 "use client";
-import { useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import React from "react";
 import Categories from "../Categories";
 import Item from "../Item";
 import { Game } from "@/app/api/games/route";
 
 type CatalogProps = {
   title: string;
+  filteredGames: Game[];
 };
 
-export default function Catalog({ title }: CatalogProps) {
-  const [games, setGames] = useState<Game[]>([]);
-  const [filteredGames, setFilteredGames] = useState<Game[]>([]);
+export default function Catalog({ title, filteredGames }: CatalogProps) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const genre = searchParams.get("genre") || "All";
-
-  useEffect(() => {
-    const fetchGames = async () => {
-      const response = await fetch("/api/games");
-      const data = (await response.json()) as Game[];
-      setGames(data);
-      setFilteredGames(data);
-    };
-
-    fetchGames();
-  }, []);
-
-  useEffect(() => {
-    if (genre === "All") {
-      setFilteredGames(games);
-    } else {
-      setFilteredGames(games.filter((game) => game.genre === genre));
-    }
-  }, [genre, games]);
 
   return (
     <div>
