@@ -3,10 +3,12 @@ import { Game } from "./app/api/games/route";
 
 type CartContextProps = {
   cart: Game[];
+  selectedFilter: string;
   addToCart: (game: Game) => void;
+  getCartCount: () => number | null;
   removeFromCart: (id: string) => void;
   isGameInCart: (id: string) => boolean;
-  getCartCount: () => number | null;
+  setSelectedFilter: (filter: string) => void;
 };
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
@@ -15,6 +17,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [cart, setCart] = useState<Game[]>([]);
+  const [selectedFilter, setSelectedFilter] = useState("");
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -58,6 +61,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
         getCartCount,
         isGameInCart,
         removeFromCart,
+        selectedFilter,
+        setSelectedFilter,
       }}
     >
       {children}

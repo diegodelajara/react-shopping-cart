@@ -1,5 +1,4 @@
 "use client";
-import { useRouter } from "next/navigation";
 import React from "react";
 import Categories from "../Categories";
 import Item from "../Item";
@@ -11,19 +10,13 @@ type CatalogProps = {
 };
 
 export default function Catalog({ title, filteredGames }: CatalogProps) {
-  const router = useRouter();
-
   return (
     <div>
       <div className="flex justify-center">
         <div className="container mx-auto px-4 w-full">
           {title}
           <div className="flex w-full lg:justify-end">
-            <Categories
-              handleSelectCategory={(category) =>
-                router.push(`/?genre=${category}`)
-              }
-            />
+            <Categories />
           </div>
         </div>
       </div>
