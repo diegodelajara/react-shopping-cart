@@ -1,6 +1,6 @@
-import Header from "../components/Header";
-import Catalog from "../components/Catalog";
-import Back from "../components/Back";
+import Header from "../components/Modules/Header";
+import Catalog from "../components/Modules/Catalog";
+import Back from "../components/Modules/Back";
 import { Game } from "./api/games/route";
 
 const wait3Seconds = () => new Promise((resolve) => setTimeout(resolve, 3000));

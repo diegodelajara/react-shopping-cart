@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import BackIcon from "../../icons/back.svg"; // Adjust the import path as necessary
+import BackIcon from "@/icons/back.svg"; // Adjust the import path as necessary
 
 export default function Back() {
   return (
