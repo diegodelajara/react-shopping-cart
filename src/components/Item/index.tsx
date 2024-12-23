@@ -1,11 +1,16 @@
 "use client";
 import { Game } from "@/app/api/games/route";
 import { useCart } from "@/Context.games";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Item({ id, title, genre, price, image }: Game) {
   const { addToCart, isGameInCart, removeFromCart } = useCart();
-  const handleAddToCart = (game: Game) => addToCart(game);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const handleAddToCart = (game: Game) => {
+    addToCart(game);
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 1000);
+  };
 
   return (
     <div className="flex flex-col border rounded-[theme(spacing.4)] overflow-hidden p-6 w-[327px] gap-4 md:w-[auto] lg:w-[327px]">
@@ -38,6 +43,11 @@ export default function Item({ id, title, genre, price, image }: Game) {
         >
           add to cart
         </button>
+      )}
+      {isAnimating && (
+        <div className="absolute top-0 right-0 bg-green-500 text-white p-2 rounded-full animate-ping">
+          Added!
+        </div>
       )}
     </div>
   );
