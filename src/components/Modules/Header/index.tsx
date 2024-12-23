@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import CartIcon from "../../icons/cart.svg";
+import CartIcon from "@/icons/cart.svg";
 import { useCart } from "@/Context.games";
 
 type HeaderProps = {
@@ -19,12 +19,14 @@ export default function Header({ title, url }: HeaderProps) {
           {title}
         </Link>
         <div className="relative">
-          <CartIcon />
-          {getCartCount() ? (
-            <span className="text-white font-bold text-sm absolute -top-2 -right-2 bg-sky-700 rounded-full w-5 h-5 flex items-center justify-center">
-              {getCartCount()}
-            </span>
-          ) : null}
+          <Link href={"/cart"}>
+            <CartIcon />
+            {getCartCount() ? (
+              <span className="text-white font-bold text-sm absolute -top-2 -right-2 bg-sky-700 rounded-full w-5 h-5 flex items-center justify-center">
+                {getCartCount()}
+              </span>
+            ) : null}
+          </Link>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import Categories from "../Categories";
-import Item from "../Item";
-import { Game } from "@/app/api/games/route";
+import Categories from "../Modules/Categories";
+import Item from "../Modules/Item";
+import { Game } from "../../app/api/games/route";
 
 type CatalogProps = {
   title: string;

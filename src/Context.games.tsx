@@ -4,6 +4,7 @@ import { Game } from "./app/api/games/route";
 type CartContextProps = {
   cart: Game[];
   selectedFilter: string;
+  getCartItems: () => Array<Game>;
   addToCart: (game: Game) => void;
   getCartCount: () => number | null;
   removeFromCart: (id: string) => void;
@@ -30,6 +31,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
+  const getCartItems = () => cart;
   const getCartCount = () => {
     return cart.length;
   };
@@ -58,6 +60,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
       value={{
         cart,
         addToCart,
+        getCartItems,
         getCartCount,
         isGameInCart,
         removeFromCart,
