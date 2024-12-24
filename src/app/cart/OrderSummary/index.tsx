@@ -9,7 +9,7 @@ export default function OrderSummary() {
     <div className="p-4 border border-gray-200 rounded-lg flex flex-col gap-11">
       <div className="flex flex-col gap-3">
         <span className="font-bold text-xl">OrderSummary</span>
-        {getCartItems().length} items
+        {getCartItems().length} item{getCartItems().length !== 1 ? "s" : ""}
       </div>
       <div className="flex flex-col gap-3">
         {getCartItems().map(({ id, title, price }) => (
