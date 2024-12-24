@@ -13,10 +13,15 @@ export default function Item({
 }: Game) {
   const { addToCart, isGameInCart, removeFromCart } = useCart();
   const [isAnimating, setIsAnimating] = useState(false);
+  const [showMore, setShowMore] = useState(false);
+
   const handleAddToCart = (game: Game) => {
     addToCart(game);
     setIsAnimating(true);
     setTimeout(() => setIsAnimating(false), 1000);
+  };
+  const handleToggleShowMore = () => {
+    setShowMore(!showMore);
   };
 
   return (
@@ -35,6 +40,17 @@ export default function Item({
           </span>
           <span className="text-gray-900 font-semibold">${price}</span>
         </div>
+        <button
+          onClick={handleToggleShowMore}
+          className="text-sm text-blue-500 hover:underline"
+        >
+          {showMore ? "see less" : "see more"}
+        </button>
+        {showMore && (
+          <div className="mt-2">
+            <p className="text-sm text-gray-500">{description}</p>
+          </div>
+        )}
       </div>
       {isGameInCart(id!) ? (
         <button
