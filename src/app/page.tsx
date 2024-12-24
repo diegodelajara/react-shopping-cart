@@ -15,7 +15,7 @@ export default async function Home({
     await wait3Seconds();
   }
   const response = await fetch(
-    `http://localhost:3000/api/games/?genre=${genre || "All"}`
+    `${process.env.NEXT_PUBLIC_API_URL}/?genre=${genre || "All"}`
   );
   const data = (await response.json()) as Game[];
 

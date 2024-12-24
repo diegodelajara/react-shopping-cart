@@ -12,7 +12,7 @@ export default function Categories() {
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCategory = e.target.value;
-    router.push(`http://localhost:3000?genre=${selectedCategory}`);
+    router.push(`/?genre=${selectedCategory}`);
     setSelectedFilter(selectedCategory);
   };
 
