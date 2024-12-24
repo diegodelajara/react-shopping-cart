@@ -14,7 +14,7 @@ export default {
         foreground: "var(--foreground)",
         customGray: '#3B3B3B',
         headerBg: '#EEEEEE',
-        headerTitle: '#585660'
+          darkGray: '#585660'
       },
       container: {
         center: true,

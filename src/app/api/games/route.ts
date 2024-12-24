@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server';
 
 export type Game = {
     id?: string;
-    genre: string;
+    genre?: string;
     image: string;
     title: string;
     description?: string;
@@ -11,7 +11,7 @@ export type Game = {
   };
 
 const games: Game[] = [
-  { id: '1', genre: 'Battle Royale', image: '/assets/elden.png', title: 'Apex', description: 'Description 1', price: 1990, isNew: true },
+  { id: '1', genre: 'Battle Royale', image: '/assets/elden.png', title: 'Apex', description: 'Apex Legends is a fast-paced battle royale game with unique characters and abilities.', price: 1990, isNew: true },
   { id: '2', genre: 'Battle Royale', image: '/assets/hollow.png', title: 'Hallow Knight', description: 'Description 1', price: 8990, isNew: true },
   { id: '3', genre: 'RPG', image: '/assets/fornite.png', title: 'Fortnite', description: 'Description 2', price: 1990, isNew: false },
   { id: '4', genre: 'Action', image: '/assets/destiny.jpeg', title: 'Destiny 2', description: 'Description 3', price: 1990, isNew: true },

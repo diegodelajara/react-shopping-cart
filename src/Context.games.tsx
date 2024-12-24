@@ -42,10 +42,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const addToCart = (game: Game) => {
     setCart((prevCart) => {
-      // Verificar si el juego ya está en el carrito
       const isGameInCart = prevCart.some((item) => item.id === game.id);
       if (isGameInCart) {
-        return prevCart; // Si el juego ya está en el carrito, no hacer nada
+        return prevCart;
       }
       return [...prevCart, game]; // Agregar el juego al carrito
     });

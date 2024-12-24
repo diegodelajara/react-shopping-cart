@@ -24,17 +24,20 @@ export default function Catalog({ title, filteredGames }: CatalogProps) {
       <div className="container mx-auto px-2">
         <div className="flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-8 xs:p-6">
-            {filteredGames.map(({ id, title, genre, price, image }) => (
-              <div key={id}>
-                <Item
-                  id={id}
-                  title={title}
-                  genre={genre}
-                  price={price}
-                  image={image}
-                />
-              </div>
-            ))}
+            {filteredGames.map(
+              ({ id, title, genre, price, image, description }) => (
+                <div key={id}>
+                  <Item
+                    id={id}
+                    title={title}
+                    genre={genre}
+                    price={price}
+                    image={image}
+                    description={description}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

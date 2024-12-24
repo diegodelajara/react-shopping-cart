@@ -23,17 +23,20 @@ export default function Catalog({ title, filteredGames }: CatalogProps) {
       </div>
       <hr />
       <CatalogLayout>
-        {filteredGames.map(({ id, title, genre, price, image }) => (
-          <div key={id}>
-            <Item
-              id={id}
-              title={title}
-              genre={genre}
-              price={price}
-              image={image}
-            />
-          </div>
-        ))}
+        {filteredGames.map(
+          ({ id, title, genre, price, image, description }) => (
+            <div key={id}>
+              <Item
+                id={id}
+                title={title}
+                genre={genre}
+                price={price}
+                image={image}
+                description={description}
+              />
+            </div>
+          )
+        )}
       </CatalogLayout>
     </div>
   );
