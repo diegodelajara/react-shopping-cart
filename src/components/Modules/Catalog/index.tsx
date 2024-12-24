@@ -24,7 +24,7 @@ export default function Catalog({ title, filteredGames }: CatalogProps) {
       <hr />
       <CatalogLayout>
         {filteredGames.map(
-          ({ id, title, genre, price, image, description }) => (
+          ({ id, title, genre, price, image, description, isNew }) => (
             <div key={id}>
               <Item
                 id={id}
@@ -32,6 +32,7 @@ export default function Catalog({ title, filteredGames }: CatalogProps) {
                 genre={genre}
                 price={price}
                 image={image}
+                isNew={isNew}
                 description={description}
               />
             </div>

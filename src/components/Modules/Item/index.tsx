@@ -9,6 +9,7 @@ export default function Item({
   genre,
   price,
   image,
+  isNew,
   description,
 }: Game) {
   const { addToCart, isGameInCart, removeFromCart } = useCart();
@@ -27,9 +28,13 @@ export default function Item({
   return (
     <div className="flex flex-col border rounded-[theme(spacing.4)] overflow-hidden p-6 w-[327px] gap-4 md:w-[auto] lg:w-[327px]">
       <div
-        className="w-full h-[240px] bg-cover bg-top bg-no-repeat rounded-t-[theme(spacing.4)]"
+        className="w-full h-[240px] bg-cover bg-top bg-no-repeat rounded-t-[theme(spacing.4)] pt-4 pl-3"
         style={{ backgroundImage: `url(${image})` }}
-      ></div>
+      >
+        {isNew && (
+          <span className="p-2 bg-white text-darkGray rounded-md"> New</span>
+        )}
+      </div>
       <div>
         <p className="text-xl font-bold mb-2 uppercase text-neutral-500">
           {genre}

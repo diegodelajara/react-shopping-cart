@@ -17,12 +17,12 @@ const games: Game[] = [
   { id: '4', genre: 'Action', image: '/assets/destiny.jpeg', title: 'Destiny 2', description: 'Description 3', price: 1990, isNew: true },
   { id: '5', genre: 'Battle Royal', image: '/assets/counter-strike.jpeg', title: 'Counter Strike 2', description: 'Description 3', price: 30, isNew: true },
   { id: '6', genre: 'Action', image: '/assets/apex.jpeg', title: 'Apex', description: 'Description 3', price: 8990, isNew: true },
-  { id: '7', genre: 'RPG', image: '/assets/ln.png', title: 'Little Nightmares', description: 'Description 3', price: 1990, isNew: true },
-  { id: '8', genre: 'Action', image: '/assets/dead.jpeg', title: 'Dead by Daylight 3', description: 'Description 3', price: 30, isNew: true },
-  { id: '9', genre: 'Action', image: '/assets/gta.jpeg', title: 'Grand Theft Auto 5', description: 'Description 3', price: 8990, isNew: true },
-  { id: '10', genre: 'Action', image: '/assets/helldivers.png', title: 'Hell Divers', description: 'Description 3', price: 1990, isNew: true },
-  { id: '11', genre: 'Battle Royal', image: '/assets/fallout.jpeg', title: 'Fallout 4', description: 'Description 3', price: 8990, isNew: true },
-  { id: '12', genre: 'Battle Royal', image: '/assets/codwz.jpeg', title: 'Call of Duty Warzone', description: 'Description 3', price: 30, isNew: true },
+  { id: '7', genre: 'RPG', image: '/assets/ln.png', title: 'Little Nightmares', description: 'Description 3', price: 1990, isNew: false },
+  { id: '8', genre: 'Action', image: '/assets/dead.jpeg', title: 'Dead by Daylight 3', description: 'Description 3', price: 30, isNew: false },
+  { id: '9', genre: 'Action', image: '/assets/gta.jpeg', title: 'Grand Theft Auto 5', description: 'Description 3', price: 8990, isNew: false },
+  { id: '10', genre: 'Action', image: '/assets/helldivers.png', title: 'Hell Divers', description: 'Description 3', price: 1990, isNew: false },
+  { id: '11', genre: 'Battle Royal', image: '/assets/fallout.jpeg', title: 'Fallout 4', description: 'Description 3', price: 8990, isNew: false },
+  { id: '12', genre: 'Battle Royal', image: '/assets/codwz.jpeg', title: 'Call of Duty Warzone', description: 'Description 3', price: 30, isNew: false },
 ];
 
 export async function GET(req: NextRequest) {
