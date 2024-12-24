@@ -3,7 +3,14 @@ import { Game } from "@/app/api/games/route";
 import { useCart } from "@/Context.games";
 import React, { useState } from "react";
 
-export default function Item({ id, title, genre, price, image }: Game) {
+export default function Item({
+  id,
+  title,
+  genre,
+  price,
+  image,
+  description,
+}: Game) {
   const { addToCart, isGameInCart, removeFromCart } = useCart();
   const [isAnimating, setIsAnimating] = useState(false);
   const handleAddToCart = (game: Game) => {
@@ -38,7 +45,9 @@ export default function Item({ id, title, genre, price, image }: Game) {
         </button>
       ) : (
         <button
-          onClick={() => handleAddToCart({ id, title, genre, price, image })}
+          onClick={() =>
+            handleAddToCart({ id, title, genre, price, image, description })
+          }
           className=" font-bold text-customGray uppercase flex w-full justify-center border rounded-[theme(spacing.2)] p-[20px] hover:bg-slate-50 "
         >
           add to cart

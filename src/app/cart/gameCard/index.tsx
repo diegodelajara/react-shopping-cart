@@ -13,29 +13,25 @@ export default function GameCard({
 }: Game) {
   const { removeFromCart } = useCart();
   return (
-    <div>
-      <CloseIcon
-        className="cursor-pointer"
-        onClick={() => removeFromCart(id || "")}
-      />
-      <div
-        className="w-full h-[136px] bg-cover bg-top bg-no-repeat "
-        style={{ backgroundImage: `url(${image})` }}
-      ></div>
-      <div>
-        <p className="text-xl font-bold mb-2 uppercase text-neutral-500">
-          BRAND
-        </p>
-        <div className="flex items-center">
-          <span className="text-xl font-bold mb-2 text-customGray">
-            {title}
-          </span>
-          <span className="text-xl font-bold mb-2 text-customGray">
-            {description}
-          </span>
-          <span className="text-gray-900 font-semibold">${price}</span>
-        </div>
+    <div className="flex flex-col overflow-hidden pt-6 px-4 gap-4 w-full min-w-[327px]">
+      <div className="flex gap-3 w-full min-h-[136px]">
+        <div
+          className="w-full bg-cover bg-top bg-no-repeat "
+          style={{ backgroundImage: `url(${image})` }}
+        ></div>
+        <CloseIcon
+          className="cursor-pointer"
+          onClick={() => removeFromCart(id || "")}
+        />
       </div>
+      <div className="flex flex-col gap-3">
+        <p className="text-xl font-bold  uppercase text-neutral-500">BRAND</p>
+        <span className="text-lg font-bold  text-customGray">{title}</span>
+        <span className="text-base  text-customGray">{description} </span>
+      </div>
+      <span className="text-gray-900 font-semibold flex justify-end">
+        ${price}
+      </span>
     </div>
   );
 }
