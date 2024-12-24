@@ -1,11 +1,14 @@
 "use client";
-import React from "react";
-import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useCart } from "@/Context.games";
 
 export default function Categories() {
+  const genre = useSearchParams().get("genre") || "All";
   const router = useRouter();
   const { setSelectedFilter } = useCart();
+
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const categories = ["All", "Battle Royale", "RPG", "Action"];
 
@@ -15,10 +18,15 @@ export default function Categories() {
     setSelectedFilter(selectedCategory);
   };
 
+  useEffect(() => {
+    setSelectedCategory(genre);
+    setSelectedFilter(genre);
+  }, [genre, setSelectedFilter]);
+
   return (
     <div>
       <span>Genre |</span>
-      <select onChange={handleChange}>
+      <select value={genre} onChange={handleChange}>
         {categories.map((category) => (
           <option key={category} value={category}>
             {category}
