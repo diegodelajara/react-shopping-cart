@@ -1,6 +1,6 @@
 import React from "react";
 import LoadingCard from "./LoadingCard";
-import Header from "@/components/Modules/Header";
+import Header from "@/components/Modules/Games/Header";
 export default function Loading() {
   return (
     <>

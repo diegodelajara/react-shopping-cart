@@ -1,11 +1,11 @@
 "use client";
-import Back from "@/components/Modules/Back";
-import Header from "@/components/Modules/Header";
+import Back from "@/components/Modules/Games/Back";
+import Header from "@/components/Modules/Games/Header";
 import { useCart } from "@/Context.games";
 import React, { Fragment } from "react";
 import GameCard from "./gameCard";
 import OrderSummary from "./OrderSummary";
-import Footer from "@/components/Modules/Footer";
+import Footer from "@/components/Modules/Games/Footer";
 
 export default function Cart() {
   const { getCartItems } = useCart();
