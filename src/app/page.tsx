@@ -1,7 +1,7 @@
-import Header from "../components/Modules/Header";
-import Catalog from "../components/Modules/Catalog";
+import Header from "../components/Modules/Games/Header";
+import Catalog from "../components/Modules/Games/Catalog";
 import { Game } from "./api/games/route";
-import Footer from "@/components/Modules/Footer";
+import Footer from "@/components/Modules/Games/Footer";
 
 const wait3Seconds = () => new Promise((resolve) => setTimeout(resolve, 3000));
 
