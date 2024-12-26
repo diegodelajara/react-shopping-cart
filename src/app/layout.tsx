@@ -1,18 +1,8 @@
 "use client";
-import { Geist, Geist_Mono } from "next/font/google";
+import React from "react";
 import "./globals.css";
 import { CartProvider } from "@/Context.games";
-// import { metadata } from "../metadata";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -21,9 +11,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Geist:wght@400;700&family=Geist_Mono:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <body>
         <CartProvider>{children}</CartProvider>
       </body>
     </html>

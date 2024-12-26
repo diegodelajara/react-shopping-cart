@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "../components/Modules/Games/Header";
 import Catalog from "../components/Modules/Games/Catalog";
 import { Game } from "./api/games/route";
