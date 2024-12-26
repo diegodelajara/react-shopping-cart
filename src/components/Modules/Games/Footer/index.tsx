@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Logo from "../../../icons/logo.svg";
+import Logo from "../../../../icons/logo.svg";
 
 export default function Footer() {
   return (

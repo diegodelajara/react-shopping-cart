@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import CartIcon from "@/icons/cart.svg";
-import { useCart } from "@/Context.games";
+import CartIcon from "../../../../icons/cart.svg";
+import { useCart } from "../../../../Context.games";
 
 type HeaderProps = {
   title: string;
