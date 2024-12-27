@@ -20,7 +20,6 @@ jest.mock("next/navigation", () => ({
   })),
 }));
 
-// Mock Cart context
 jest.mock("@/Context.games", () => ({
   useCart: jest.fn(() => ({
     games: [],
