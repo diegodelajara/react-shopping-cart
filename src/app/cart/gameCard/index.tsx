@@ -1,7 +1,7 @@
 "use client";
 import { Game } from "@/app/api/games/route";
 import React from "react";
-import CloseIcon from "@/icons/close.svg";
+import CloseIcon from "../../../icons/close.svg";
 import { useCart } from "@/Context.games";
 
 export default function GameCard({

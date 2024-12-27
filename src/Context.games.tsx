@@ -12,7 +12,9 @@ type CartContextProps = {
   setSelectedFilter: (filter: string) => void;
 };
 
-const CartContext = createContext<CartContextProps | undefined>(undefined);
+export const CartContext = createContext<CartContextProps | undefined>(
+  undefined
+);
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   children,

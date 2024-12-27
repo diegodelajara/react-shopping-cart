@@ -25,7 +25,7 @@ export default function Catalog({ title, filteredGames }: CatalogProps) {
       <CatalogLayout>
         {filteredGames.map(
           ({ id, title, genre, price, image, description, isNew }) => (
-            <div key={id}>
+            <div key={id} data-testid="game">
               <Item
                 id={id}
                 title={title}
